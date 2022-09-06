@@ -188,7 +188,7 @@ class KarismaConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
     def _map_entity_id(self, user_input, pin_number):
         return "sw_%s_%d" % (
             self._addr_dic_to_title(user_input[CONF_FLOW_ADDR]),
-            pin_number,
+            pin_number + 1,
         )
 
     def _map_addr_dic_to_i2caddr(self, addr_dic):

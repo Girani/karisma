@@ -158,6 +158,7 @@ class KARISMA:
         try:
             self._bus = smbus2.SMBus(1)
             self._bus.read_byte(self._address)
+            self._bus.write_byte_data(self._address, 0, 200)
         except (FileNotFoundError, OSError) as error:
             _LOGGER.error(
                 "Unable to access %s (%s)",
